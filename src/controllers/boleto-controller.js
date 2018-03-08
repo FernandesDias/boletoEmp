@@ -3,7 +3,7 @@
 const mongoose = require('mongoose');
 const Boleto = mongoose.model('Boleto');
 
-exports.get = (req,res,next) =>{
+//exports.get = (req,res,next) =>{
     Boleto
     .findOne({
         active: true
@@ -14,7 +14,10 @@ exports.get = (req,res,next) =>{
         });
     }, err => {
         res.send('err');
-    });
+  });
+//}
+exports.cad = (req,res,next) =>{
+    res.render('cadastro');
 }
 
 exports.post = (req,res,next) =>{

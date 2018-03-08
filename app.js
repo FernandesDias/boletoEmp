@@ -13,6 +13,10 @@ const Boleto = require('./src/models/boleto');
 
 app.set('view engine', 'pug');
 app.set('views', './src/views');
+// arquivos estaticos
+app.use('/js', express.static(__dirname + '/node_modules/bootstrap/dist/js')); // redirect bootstrap JS
+app.use('/js', express.static(__dirname + '/node_modules/jquery/dist')); // redirect JS jQuery
+app.use('/css', express.static(__dirname + '/node_modules/bootstrap/dist/css'));
 
 //Carrega as rotas
 const indexRoute = require('./src/router/index-route');
@@ -23,7 +27,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 
 //Define as rotas
-app.use('/', index);
+app.use('/', indexRoute);
 app.use('/boleto', boletoRoute);
+app.use('/cadastrar', boletoRoute);
 
 module.exports = app;

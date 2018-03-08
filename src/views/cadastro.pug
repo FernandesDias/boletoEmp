@@ -1,0 +1,19 @@
+extends layout
+
+block content
+    .container
+      form(method="post" action="")
+        .form-group
+          label(for="exampleInputEmail1") Nome da Empresa
+          input#exampleInputEmail1.form-control(type="text" aria-describedby="emailHelp" placeholder="Entrar com o nome da empresa")          
+        .form-check
+          input#homologado.form-check-input(type="checkbox")
+          label.form-check-label(for="homologado") Homologado
+        .form-check
+          input#naoHomologado.form-check-input(type="checkbox")
+          label.form-check-label(for="naoHomologado") Não Homologado
+        .form-group
+          label(for="exampleFormControlTextarea1") Example textarea
+          textarea#exampleFormControlTextarea1.form-control(rows="3")
+        button.btn.btn-primary(type="submit") Enviar
+
